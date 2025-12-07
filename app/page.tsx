@@ -4,19 +4,24 @@ import { Calendar, MapPin, Users, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-emerald-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-emerald-50 to-white dark:from-emerald-950 dark:to-gray-900">
       <div className="container mx-auto px-4 py-16">
+        <div className="flex justify-end mb-4">
+          <ThemeToggle />
+        </div>
+        
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-500 rounded-2xl mb-6">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-500 dark:bg-emerald-600 rounded-2xl mb-6">
             <Calendar className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             Kiedy/gdzie spotkanie?
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Zaplanuj spotkanie z grupą w prosty sposób. Bez rejestracji, bez komplikacji.
           </p>
         </div>
@@ -25,8 +30,8 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             <Card>
               <CardHeader>
-                <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-                  <Calendar className="w-6 h-6 text-emerald-600" />
+                <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900 rounded-lg flex items-center justify-center mb-4">
+                  <Calendar className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                 </div>
                 <CardTitle>Utwórz spotkanie</CardTitle>
                 <CardDescription>
@@ -37,8 +42,8 @@ export default function Home() {
 
             <Card>
               <CardHeader>
-                <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-emerald-600" />
+                <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                 </div>
                 <CardTitle>Udostępnij link</CardTitle>
                 <CardDescription>
@@ -49,8 +54,8 @@ export default function Home() {
 
             <Card>
               <CardHeader>
-                <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-                  <MapPin className="w-6 h-6 text-emerald-600" />
+                <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900 rounded-lg flex items-center justify-center mb-4">
+                  <MapPin className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                 </div>
                 <CardTitle>Zbierz głosy</CardTitle>
                 <CardDescription>
@@ -62,29 +67,29 @@ export default function Home() {
 
           <div className="text-center space-y-4">
             <Link href="/create">
-              <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-6 text-lg">
+              <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-emerald-700 text-white px-8 py-6 text-lg">
                 <Calendar className="w-5 h-5 mr-2" />
                 Utwórz nową ankietę
               </Button>
             </Link>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               Nie wymaga rejestracji ani logowania
             </p>
           </div>
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <Card className="border-emerald-200 bg-emerald-50">
+          <Card className="border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950">
             <CardHeader>
               <div className="flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-emerald-600" />
-                <CardTitle className="text-emerald-900">Wsparcie AI</CardTitle>
+                <Sparkles className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                <CardTitle className="text-emerald-900 dark:text-emerald-100">Wsparcie AI</CardTitle>
               </div>
-              <CardDescription className="text-emerald-700">
+              <CardDescription className="text-emerald-700 dark:text-emerald-300">
                 Nasza aplikacja wykorzystuje sztuczną inteligencję do:
               </CardDescription>
             </CardHeader>
-            <CardContent className="text-emerald-800">
+            <CardContent className="text-emerald-800 dark:text-emerald-200">
               <ul className="space-y-2">
                 <li className="flex items-start">
                   <span className="mr-2">•</span>
@@ -97,10 +102,6 @@ export default function Home() {
                 <li className="flex items-start">
                   <span className="mr-2">•</span>
                   <span>Analizy wyników głosowania i rekomendacji najlepszych opcji</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>Generowania treści zaproszeń dla uczestników</span>
                 </li>
               </ul>
             </CardContent>
